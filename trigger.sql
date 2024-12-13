@@ -28,7 +28,7 @@ BEGIN
     WHERE playerNumber IN (SELECT playerNumber FROM players WHERE teamNumber = team_id);
 
     UPDATE teamattributes
-    SET averageAge = avg_rating
+    SET overall = avg_rating
     WHERE teamNumber = team_id;
 END$$
 DELIMITER ;

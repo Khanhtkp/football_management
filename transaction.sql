@@ -6,7 +6,7 @@ SET teamShortName = 'MUL'
 WHERE teamNumber = 11;
 -- Thêm một cầu thủ mới (players)
 INSERT INTO players (playerNumber, playerName, countryNumber, teamNumber, birthday) 
-VALUES (201233, 'Nguyen Cong Phuong', 1234, 12, '1995-01-21');
+VALUES (201233, 'Nguyen Cong Phuong', null, null, '1995-01-21');
 -- Xóa một cầu thủ (players)
 DELETE FROM players
 WHERE playerNumber = 5;
@@ -21,8 +21,10 @@ UPDATE teamAttributes
 SET overall = overall + 5
 WHERE teamNumber = 243;
 -- Thêm thuộc tính mới cho một cầu thủ (playerattributes)
+INSERT INTO players (playerNumber, playerName, countryNumber, teamNumber, birthday) 
+VALUES (201233, 'Nguyen Cong Phuong', null, null, '1995-01-21');
 INSERT INTO playerAttributes (playerNumber, overallRating, potential, preferredFoot, crossing, finishing, acceleration, interceptions, visions, gkHandling)
-VALUES (231677, 81, 88, 'Right', 79, 80, 87, 37, 77, 7);
+VALUES (201233, 81, 88, 'Right', 79, 80, 87, 37, 77, 7);
 -- Xóa thuộc tính của một đội bóng (teamattributes)
 DELETE FROM teamattributes
 WHERE teamNumber = 1;

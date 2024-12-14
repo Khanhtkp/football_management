@@ -79,7 +79,11 @@ FROM
          teams
     ) AS t
 INNER JOIN 
-    playerattributes AS pa ON t.teamID = pa.playerNumber
+    playerattributes AS pa ON t.teamID = 
+    (SELECT 
+			   p.teamNumber 
+    FROM players p
+    WHERE p.playerNumber = pa.playerNumber)
 GROUP BY 
     t.teamName;
 
